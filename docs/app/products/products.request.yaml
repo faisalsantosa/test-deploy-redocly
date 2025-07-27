@@ -1,0 +1,190 @@
+CreateProduct:
+  description: Create a new product
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          - name
+          - brandId
+          - categoryId
+          - subCategoryId
+          - price
+          - currencyId
+          - url
+          - images
+          - thumbnail
+          - description
+          - colors
+        properties: 
+          name:
+            type: string
+            example: Apple
+          brandId:
+            type: integer
+            example: 1
+          categoryId:
+            type: integer
+            example: 1
+          subCategoryId:
+            type: integer
+            example: 1
+          spaces:
+            type: array
+            items:
+              type: integer
+            example: [1, 2, 3]
+          price:
+            type: number
+            example: 10000
+          isOnSale:
+            type: boolean
+            example: false
+          salePrice:
+            type: number
+            example: 5000
+          currencyId:
+            type: integer
+            example: 1
+          url:
+            type: string
+            example: https://example.com/smartwatch/buy-here.html
+          statuses:
+            type: array
+            items:
+              type: integer
+            example: [1, 2]
+          images:
+            type: array
+            items:
+              type: string
+            example: ["https://example.com/image1.jpg", "https://example.com/image2.jpg"]
+          thumbnail:
+            type: string
+            example: https://example.com/thumbnail.jpg
+          description:
+            type: string
+            example: "This is a description"
+          pros:
+            type: string
+            example: "Long battery life"
+          cons:
+            type: string
+            example: "It's too heavy"
+          specifications:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                value:
+                  type: string
+            example: 
+              - id: 1
+                value: "250g"
+              - id: 2
+                value: "30 cm"
+          colors:
+            type: array
+            items:
+              type: integer
+            example: [1, 2]
+UpdateProduct:
+  description: Update a product
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          - name
+          - brandId
+          - categoryId
+          - subCategoryId
+          - price
+          - currencyId
+          - url
+          - images
+          - thumbnail
+          - description
+          - colors
+        properties: 
+          name:
+            type: string
+            example: Apple
+          brandId:
+            type: integer
+            example: 1
+          categoryId:
+            type: integer
+            example: 1
+          subCategoryId:
+            type: integer
+            example: 1
+          spaces:
+            type: array
+            items:
+              type: integer
+            example: [1, 2, 3]
+          price:
+            type: number
+            example: 10000
+          isOnSale:
+            type: boolean
+            example: false
+          salePrice:
+            type: number
+            example: 5000
+          currencyId:
+            type: integer
+            example: 1
+          url:
+            type: string
+            example: https://example.com/smartwatch/buy-here.html
+          statuses:
+            type: array
+            items:
+              type: integer
+            example: [1, 2]
+          images:
+            type: array
+            items:
+              type: string
+            example: ["https://example.com/image1.jpg", "https://example.com/image2.jpg"]
+          thumbnail:
+            type: string
+            example: https://example.com/thumbnail.jpg
+          description:
+            type: string
+            example: "This is a description"
+          pros:
+            type: string
+            example: "Long battery life"
+          cons:
+            type: string
+            example: "It's too heavy"
+          specifications:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                value:
+                  type: string
+            example: 
+              - id: 1
+                value: "250 g"
+              - id: 2
+                value: "30 cm"
+          colors:
+            type: array
+            items:
+              type: integer
+            example: [1, 2]

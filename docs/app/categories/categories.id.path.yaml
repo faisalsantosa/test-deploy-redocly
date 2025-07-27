@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Categories
+  summary: Get Selected Category
+  operationId: getSelectedCategory
+  parameters:
+    - $ref: categories.parameter.yaml#/CategoryID
+  responses: 
+    "200":
+      $ref: categories.response.yaml#/OneCategory
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Categories
+  summary: Update Category
+  operationId: updateCategory
+  parameters: 
+    - $ref: categories.parameter.yaml#/CategoryID
+  requestBody: 
+    $ref: categories.request.yaml#/UpdateCategory
+  responses: 
+    "200":
+      $ref: categories.response.yaml#/OneCategory
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Categories
+  summary: Delete Category
+  operationId: deleteCategory
+  parameters: 
+    - $ref: categories.parameter.yaml#/CategoryID
+  responses: 
+    "200":
+      description: Delete category
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Category deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

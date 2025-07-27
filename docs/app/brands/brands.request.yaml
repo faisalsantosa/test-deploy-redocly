@@ -1,0 +1,38 @@
+CreateBrand:
+  description: Create a new brand
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Apple
+          logo:
+            type: string
+            example: https://example.com/logo.png
+          website:
+            type: string
+            example: https://example.com
+UpdateBrand:
+  description: Update a brand
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Edit brand
+          logo:
+            type: string
+            example: https://example.com/logo.png
+          website:
+            type: string
+            example: https://example.com

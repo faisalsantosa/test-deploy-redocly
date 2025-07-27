@@ -1,0 +1,14 @@
+DeleteSchema:
+  type: object
+  properties: 
+    message:
+      $ref: ./messages.yaml#/DeleteDataSuccessMessage
+CreatedOrUpdatedBy:
+  type: object
+  properties:
+    id:
+      type: integer
+      example: 1
+    name:
+      type: string
+      example: "John Doe"

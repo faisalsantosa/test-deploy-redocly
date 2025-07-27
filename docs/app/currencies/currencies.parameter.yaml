@@ -1,0 +1,67 @@
+CurrencyID:
+  name: id
+  in: path
+  required: true
+  description: resource currency id
+  schema: 
+    type: string
+    example: 1
+SortField:
+  name: sortField
+  in: query
+  allowReserved: true
+  description: Data can be sorted by these fields, with the default being `createdAt`.
+  schema: 
+    type: string
+    enum: 
+      - name
+      - code
+      - createdAt
+      - updatedAt
+    example: createdAt
+  style: form
+SortDirection:
+  name: sortDirection
+  in: query
+  allowReserved: true
+  description: Sort direction, with the default being `desc`.
+  schema: 
+    type: string
+    enum: 
+      - asc
+      - desc
+    example: desc
+SearchFields:
+  name: searchFields
+  in: query
+  allowReserved: true
+  description: The fields that allowed to search.
+  schema:
+    type: string
+    enum:
+      - name
+      - code
+  examples:
+    Empty:
+      summary: Empty
+      value: ''
+    SingleField:
+      summary: Single Field
+      value: name
+    MultipleFields:
+      summary: Multiple Fields
+      value: name,description
+SearchKeyword:
+  name: searchKeyword
+  in: query
+  allowReserved: true
+  description: The words that you want to search
+  schema:
+    type: string
+  examples:
+    Empty:
+      summary: Empty
+      value: ''
+    String:
+      summary: String
+      value: lorem ipsum

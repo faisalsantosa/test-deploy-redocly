@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Categories
+  summary: Get All Categories
+  operationId: getAllCategories
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: categories.parameter.yaml#/SortField
+    - $ref: categories.parameter.yaml#/SortDirection
+    - $ref: categories.parameter.yaml#/SearchFields
+    - $ref: categories.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: categories.response.yaml#/AllCategories
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Categories
+  summary: Create Category
+  operationId: createCategory
+  requestBody: 
+    $ref: categories.request.yaml#/CreateCategory
+  responses: 
+    "200":
+      $ref: categories.response.yaml#/OneCategory
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

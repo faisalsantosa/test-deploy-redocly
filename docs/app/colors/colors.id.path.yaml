@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Colors
+  summary: Get Selected Color
+  operationId: getSelectedColor
+  parameters:
+    - $ref: colors.parameter.yaml#/ColorID
+  responses: 
+    "200":
+      $ref: colors.response.yaml#/OneColor
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Colors
+  summary: Update Color
+  operationId: updateColor
+  parameters: 
+    - $ref: colors.parameter.yaml#/ColorID
+  requestBody: 
+    $ref: colors.request.yaml#/UpdateColor
+  responses: 
+    "200":
+      $ref: colors.response.yaml#/OneColor
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Colors
+  summary: Delete Color
+  operationId: deleteColor
+  parameters: 
+    - $ref: colors.parameter.yaml#/ColorID
+  responses: 
+    "200":
+      description: Delete color
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Color deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

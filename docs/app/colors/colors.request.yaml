@@ -1,0 +1,34 @@
+CreateColor:
+  description: Create a new color
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          - name
+          - hex
+        properties: 
+          name:
+            type: string
+            example: White
+          hex:
+            type: string
+            example: '#ffffff'
+UpdateColor:
+  description: Update a color
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          - name
+          - hex
+        properties: 
+          name:
+            type: string
+            example: White
+          hex:
+            type: string
+            example: '#ffffff'

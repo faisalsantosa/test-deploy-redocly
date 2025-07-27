@@ -1,0 +1,63 @@
+AllCollectionProducts:
+  description: Success
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+            example: Success
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                collection:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: "Smartwatch Collection"
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: "Product Name"
+                      description:
+                        type: string
+                        example: "Product Description"
+                      price:
+                        type: number
+                        format: float
+                        example: 19.99
+                      thumbnail:
+                        type: string
+                        format: uri
+                        example: "http://example.com/image.jpg"
+                      currency:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 1
+                          name:
+                            type: string
+                            example: "US Dollar"
+                          code:
+                            type: string
+                            example: "USD"
+                          symbol:
+                            type: string
+                            example: "$"
+          meta:
+            $ref: ../../../../shared/schemas/meta.yaml

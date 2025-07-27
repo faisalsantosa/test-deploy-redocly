@@ -1,0 +1,27 @@
+GetDataListSuccessMessage:
+  type: string
+  example: Data list displayed successfully
+
+GetDataDetailSuccessMessage:
+  type: string
+  example: Data detail displayed successfully.
+
+CreateDataSuccessMessage:
+  type: string
+  example: Data created successfully
+
+UpdateDataSuccessMessage:
+  type: string
+  example: Data updated successfully
+
+DeleteDataSuccessMessage:
+  type: string
+  example: Data deleted successfully
+
+DataAlreadyExistsMessage:
+  type: string
+  example: Data already exists
+  
+DataNotFoundMessage:
+  type: string
+  example: Data not found

@@ -1,0 +1,26 @@
+CreateCategory:
+  description: Create a new category
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Electronics
+UpdateCategory:
+  description: Update a category
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Edit category

@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Spaces
+  summary: Get Selected Space
+  operationId: getSelectedSpace
+  parameters:
+    - $ref: spaces.parameter.yaml#/SpaceID
+  responses: 
+    "200":
+      $ref: spaces.response.yaml#/OneSpace
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Spaces
+  summary: Update Space
+  operationId: updateSpace
+  parameters: 
+    - $ref: spaces.parameter.yaml#/SpaceID
+  requestBody: 
+    $ref: spaces.request.yaml#/UpdateSpace
+  responses: 
+    "200":
+      $ref: spaces.response.yaml#/OneSpace
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Spaces
+  summary: Delete Space
+  operationId: deleteSpace
+  parameters: 
+    - $ref: spaces.parameter.yaml#/SpaceID
+  responses: 
+    "200":
+      description: Delete space
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Space deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

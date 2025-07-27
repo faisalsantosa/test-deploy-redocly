@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Currencies
+  summary: Get All Currencies
+  operationId: getAllCurrencies
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: currencies.parameter.yaml#/SortField
+    - $ref: currencies.parameter.yaml#/SortDirection
+    - $ref: currencies.parameter.yaml#/SearchFields
+    - $ref: currencies.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: currencies.response.yaml#/AllCurrencies
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Currencies
+  summary: Create Currency
+  operationId: createCurrency
+  requestBody: 
+    $ref: currencies.request.yaml#/CreateCurrency
+  responses: 
+    "200":
+      $ref: currencies.response.yaml#/OneCurrency
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

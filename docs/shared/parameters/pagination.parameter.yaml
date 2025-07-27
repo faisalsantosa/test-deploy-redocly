@@ -1,0 +1,26 @@
+Page:
+  name: page
+  in: query
+  description: Get specific page
+  schema:
+    type: integer
+  examples:
+    Empty:
+      summary: Not included page
+      value: ''
+    Filled:
+      summary: Filled page
+      value: 1
+PerPage:
+  name: perPage
+  in: query
+  description: Get rows per page
+  schema:
+    type: integer
+  examples:
+    Empty:
+      summary: Not specified rows per page, default is 15
+      value: ''
+    Filled:
+      summary: specified rows per page
+      value: 15

@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Sub Categories
+  summary: Get Selected Sub Category
+  operationId: getSelectedSubCategory
+  parameters:
+    - $ref: sub-categories.parameter.yaml#/SubCategoryID
+  responses: 
+    "200":
+      $ref: sub-categories.response.yaml#/OneSubCategory
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Sub Categories
+  summary: Update Sub Category
+  operationId: updateSubCategory
+  parameters: 
+    - $ref: sub-categories.parameter.yaml#/SubCategoryID
+  requestBody: 
+    $ref: sub-categories.request.yaml#/UpdateSubCategory
+  responses: 
+    "200":
+      $ref: sub-categories.response.yaml#/OneSubCategory
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Sub Categories
+  summary: Delete Sub Category
+  operationId: deleteSubCategory
+  parameters: 
+    - $ref: sub-categories.parameter.yaml#/SubCategoryID
+  responses: 
+    "200":
+      description: Delete sub category
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Sub Category deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

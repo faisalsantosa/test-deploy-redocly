@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Statuses
+  summary: Get All Statuses
+  operationId: getAllStatuses
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: statuses.parameter.yaml#/SortField
+    - $ref: statuses.parameter.yaml#/SortDirection
+    - $ref: statuses.parameter.yaml#/SearchFields
+    - $ref: statuses.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: statuses.response.yaml#/AllStatuses
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Statuses
+  summary: Create Status
+  operationId: createStatus
+  requestBody: 
+    $ref: statuses.request.yaml#/CreateStatus
+  responses: 
+    "200":
+      $ref: statuses.response.yaml#/OneStatus
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

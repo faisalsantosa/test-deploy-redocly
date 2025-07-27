@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Seaofown API Specs
+  description: Seaofown API Specs
+  contact:
+    email: main.septyan@gmail.com
+  license:
+    name: ""
+    url: x
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+tags:
+  - name: Brands
+    description: " "
+  - name: Categories
+    description: " "
+  - name: Sub Categories
+    description: " "
+  - name: Spaces
+    description: " "
+  - name: Currencies
+    description: " "
+  - name: Statuses
+    description: " "
+  - name: Specifications
+    description: " "
+  - name: Colors
+    description: " "
+  - name: Products
+    description: " "
+  - name: Collections
+    description: " "
+  - name: Collection Products
+    description: "Collection Products API allows you to manage products within collections. You can add, remove, and list products in a specific collection."
+
+x-tagGroups:
+  - name: Master Data
+    tags:
+      - Brands
+      - Categories
+      - Sub Categories
+      - Spaces
+      - Currencies
+      - Statuses
+      - Specifications
+      - Colors
+  - name: Product Management
+    tags:
+      - Products
+      - Collections
+      - Collection Products
+
+servers:
+  - url: "http://127.0.0.1:8081/api"
+    description: Local Server
+components:
+  securitySchemes: {}
+security:
+  - {}
+paths: 
+  # --- Brands ---
+  /v1/brands:
+    $ref: app/brands/brands.path.yaml
+  /v1/brands/{id}:
+    $ref: app/brands/brands.id.path.yaml
+
+  # --- Categories ---
+  /v1/categories:
+    $ref: app/categories/categories.path.yaml
+  /v1/categories/{id}:
+    $ref: app/categories/categories.id.path.yaml
+
+  # --- Sub Categories ---
+  /v1/sub-categories:
+    $ref: app/sub-categories/sub-categories.path.yaml
+  /v1/sub-categories/{id}:
+    $ref: app/sub-categories/sub-categories.id.path.yaml
+
+  # --- Spaces ---
+  /v1/spaces:
+    $ref: app/spaces/spaces.path.yaml
+  /v1/spaces/{id}:
+    $ref: app/spaces/spaces.id.path.yaml
+
+  # --- Currencies ---
+  /v1/currencies:
+    $ref: app/currencies/currencies.path.yaml
+  /v1/currencies/{id}:
+    $ref: app/currencies/currencies.id.path.yaml
+
+  # --- Statuses ---
+  /v1/statuses:
+    $ref: app/statuses/statuses.path.yaml
+  /v1/statuses/{id}:
+    $ref: app/statuses/statuses.id.path.yaml
+
+  # --- Specifications ---
+  /v1/specifications:
+    $ref: app/specifications/specifications.path.yaml
+  /v1/specifications/{id}:
+    $ref: app/specifications/specifications.id.path.yaml
+
+  # --- Colors ---
+  /v1/colors:
+    $ref: app/colors/colors.path.yaml
+  /v1/colors/{id}:
+    $ref: app/colors/colors.id.path.yaml
+  
+  # --- Products ---
+  /v1/products:
+    $ref: app/products/products.path.yaml
+  /v1/products/{id}:
+    $ref: app/products/products.id.path.yaml
+  
+  # --- Collections ---
+  /v1/collections:
+    $ref: app/collections/collections.path.yaml
+  /v1/collections/{id}:
+    $ref: app/collections/collections.id.path.yaml
+  
+  # --- Collection Products ---
+  /v1/collections/{id}/products:
+    $ref: app/collections/related/products/collection-products.path.yaml
+      

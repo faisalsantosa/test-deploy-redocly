@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Brands
+  summary: Get Selected Brand
+  operationId: getSelectedBrand
+  parameters:
+    - $ref: brands.parameter.yaml#/BrandID
+  responses: 
+    "200":
+      $ref: brands.response.yaml#/OneBrand
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Brands
+  summary: Update Brand
+  operationId: updateBrand
+  parameters: 
+    - $ref: brands.parameter.yaml#/BrandID
+  requestBody: 
+    $ref: brands.request.yaml#/UpdateBrand
+  responses: 
+    "200":
+      $ref: brands.response.yaml#/OneBrand
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Brands
+  summary: Delete Brand
+  operationId: deleteBrand
+  parameters: 
+    - $ref: brands.parameter.yaml#/BrandID
+  responses: 
+    "200":
+      description: Delete brand
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Brand deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

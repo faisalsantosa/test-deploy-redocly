@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Statuses
+  summary: Get Selected Status
+  operationId: getSelectedStatus
+  parameters:
+    - $ref: statuses.parameter.yaml#/StatusID
+  responses: 
+    "200":
+      $ref: statuses.response.yaml#/OneStatus
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Statuses
+  summary: Update Status
+  operationId: updateStatus
+  parameters: 
+    - $ref: statuses.parameter.yaml#/StatusID
+  requestBody: 
+    $ref: statuses.request.yaml#/UpdateStatus
+  responses: 
+    "200":
+      $ref: statuses.response.yaml#/OneStatus
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Statuses
+  summary: Delete Status
+  operationId: deleteStatus
+  parameters: 
+    - $ref: statuses.parameter.yaml#/StatusID
+  responses: 
+    "200":
+      description: Delete status
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Status deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

@@ -1,0 +1,31 @@
+get: 
+  tags: 
+    -  Products
+  summary: Get All Products
+  operationId: getAllProducts
+  responses: 
+    "200":
+      $ref: products.response.yaml#/AllProducts
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Products
+  summary: Create Product
+  operationId: createProduct
+  requestBody: 
+    $ref: products.request.yaml#/CreateProduct
+  responses: 
+    "200":
+      $ref: products.response.yaml#/OneProduct
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    

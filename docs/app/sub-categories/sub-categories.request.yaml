@@ -1,0 +1,34 @@
+CreateSubCategory:
+  description: Create a new sub category
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+          -  categoryId
+        properties: 
+          name:
+            type: string
+            example: Laptops
+          categoryId:
+            type: integer
+            example: 1
+UpdateSubCategory:
+  description: Update a sub category
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+          -  categoryId
+        properties: 
+          name:
+            type: string
+            example: Edit sub category
+          categoryId:
+            type: integer
+            example: 1

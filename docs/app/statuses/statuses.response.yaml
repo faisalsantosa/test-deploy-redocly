@@ -1,0 +1,61 @@
+AllStatuses:
+  description: Success
+  content: 
+    application/json:
+      schema: 
+        type: object
+        properties: 
+          message:
+            type: string
+            examples: 
+              - Success
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 1
+                name:
+                  type: string
+                  example: Active
+                isActive:
+                  type: boolean
+                  example: true
+                createdAt:
+                  type: string
+                  example: "2021-01-01T00:00:00Z"
+                updatedAt:
+                  type: string
+                  example: "2021-01-01T00:00:00Z"
+          meta:
+            $ref: ../../shared/schemas/meta.yaml
+OneStatus:
+  description: Success
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+            example: Success
+          data:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 1
+              name:
+                type: string
+                example: Active
+              isActive:
+                type: boolean
+                example: true
+              createdAt:
+                type: string
+                example: "2021-01-01T00:00:00Z"
+              updatedAt:
+                type: string
+                example: "2021-01-01T00:00:00Z"

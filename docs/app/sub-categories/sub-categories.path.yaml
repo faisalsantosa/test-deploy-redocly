@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Sub Categories
+  summary: Get All Sub Categories
+  operationId: getAllSubCategories
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: sub-categories.parameter.yaml#/SortField
+    - $ref: sub-categories.parameter.yaml#/SortDirection
+    - $ref: sub-categories.parameter.yaml#/SearchFields
+    - $ref: sub-categories.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: sub-categories.response.yaml#/AllSubCategories
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Sub Categories
+  summary: Create Sub Category
+  operationId: createSubCategory
+  requestBody: 
+    $ref: sub-categories.request.yaml#/CreateSubCategory
+  responses: 
+    "200":
+      $ref: sub-categories.response.yaml#/OneSubCategory
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

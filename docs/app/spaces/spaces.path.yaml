@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Spaces
+  summary: Get All Spaces
+  operationId: getAllSpaces
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: spaces.parameter.yaml#/SortField
+    - $ref: spaces.parameter.yaml#/SortDirection
+    - $ref: spaces.parameter.yaml#/SearchFields
+    - $ref: spaces.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: spaces.response.yaml#/AllSpaces
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Spaces
+  summary: Create Space
+  operationId: createSpace
+  requestBody: 
+    $ref: spaces.request.yaml#/CreateSpace
+  responses: 
+    "200":
+      $ref: spaces.response.yaml#/OneSpace
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

@@ -1,0 +1,67 @@
+AllSpaces:
+  description: Success
+  content: 
+    application/json:
+      schema: 
+        type: object
+        properties: 
+          message:
+            type: string
+            examples: 
+              - Success
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 1
+                name:
+                  type: string
+                  example: Office
+                thumnail:
+                  type: string
+                  example: "https://picsum.photos/id/1/5000/3333"
+                order:
+                  type: integer
+                  example: 1
+                createdAt:
+                  type: string
+                  example: "2021-01-01T00:00:00Z"
+                updatedAt:
+                  type: string
+                  example: "2021-01-01T00:00:00Z"
+          meta:
+            $ref: ../../shared/schemas/meta.yaml
+OneSpace:
+  description: Success
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+            example: Success
+          data:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 1
+              name:
+                type: string
+                example: Office
+              thumnail:
+                type: string
+                example: "https://picsum.photos/id/1/5000/3333"
+              order:
+                type: integer
+                example: 1
+              createdAt:
+                type: string
+                example: "2021-01-01T00:00:00Z"
+              updatedAt:
+                type: string
+                example: "2021-01-01T00:00:00Z"

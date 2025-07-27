@@ -1,0 +1,18 @@
+type: object
+properties:
+  currentPage:
+    type: integer
+    examples:
+      - 1
+  perPage:
+    type: integer
+    examples:
+      - 15
+  totalPage:
+    type: integer
+    examples:
+      - 3
+  totalData:
+    type: integer
+    examples:
+      - 45

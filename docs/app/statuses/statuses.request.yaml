@@ -1,0 +1,55 @@
+CreateStatus:
+  description: Create a new space
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Active
+          isActive:
+            type: boolean
+            example: true
+            description: if `isActive` field is null, the default value will be `true`
+      examples:
+        defaultAction:
+          summary: Default active space
+          value:
+            name: Active
+            isActive: true
+        withoutIsActive:
+          summary: Omitted isActive, should default to true
+          value:
+            name: Active
+
+UpdateStatus:
+  description: Update a space
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Active
+          isActive:
+            type: boolean
+            example: true
+            description: if `isActive` field is null, the default value will be `true`
+      examples:
+        defaultAction:
+          summary: Default active space
+          value:
+            name: Active
+            isActive: true
+        withoutIsActive:
+          summary: Omitted isActive, should default to true
+          value:
+            name: Active

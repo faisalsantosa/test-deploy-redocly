@@ -1,0 +1,13 @@
+AddCollectionProduct:
+  description: resource body should contain the product ID to be added to the collection.
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  productId
+        properties: 
+          productId:
+            type: integer
+            example: 1

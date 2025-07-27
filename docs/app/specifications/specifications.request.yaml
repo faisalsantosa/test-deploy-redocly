@@ -1,0 +1,32 @@
+CreateSpecification:
+  description: Create a new specification
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Weight
+          icon:
+            type: string
+            example: https://example.com/icon.png
+UpdateSpecification:
+  description: Update a specification
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+        properties: 
+          name:
+            type: string
+            example: Edit specification
+          icon:
+            type: string
+            example: https://example.com/icon.png

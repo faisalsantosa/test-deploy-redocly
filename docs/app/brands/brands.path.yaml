@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Brands
+  summary: Get All Brands
+  operationId: getAllBrands
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: brands.parameter.yaml#/SortField
+    - $ref: brands.parameter.yaml#/SortDirection
+    - $ref: brands.parameter.yaml#/SearchFields
+    - $ref: brands.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: brands.response.yaml#/AllBrands
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Brands
+  summary: Create Brand
+  operationId: createBrand
+  requestBody: 
+    $ref: brands.request.yaml#/CreateBrand
+  responses: 
+    "200":
+      $ref: brands.response.yaml#/OneBrand
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

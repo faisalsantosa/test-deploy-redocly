@@ -1,0 +1,78 @@
+CreateCurrency:
+  description: Create a new currency
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          - name
+          - code
+          - symbol
+        properties: 
+          name:
+            type: string
+            example: US Dollar
+          code:
+            type: string
+            example: USD
+          symbol:
+            type: string
+            example: $
+          isDefault:
+            type: boolean
+            example: true
+            description: if `isDefault` field is null, the default value will be `false`
+      examples:
+        defaultAction:
+          summary: Default active space
+          value:
+            name: US Dollar
+            code: USD
+            symbol: $
+            isDefault: true
+        withoutIsActive:
+          summary: Omitted isDefault, should default to false
+          value:
+            name: US Dollar
+            code: USD
+            symbol: $
+UpdateCurrency:
+  description: Update a currency
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          - name
+          - code
+          - symbol
+        properties: 
+          name:
+            type: string
+            example: US Dollar
+          code:
+            type: string
+            example: USD
+          symbol:
+            type: string
+            example: $
+          isDefault:
+            type: boolean
+            example: true
+            description: if `isDefault` field is null, the default value will be `false`
+      examples:
+        defaultAction:
+          summary: Default active space
+          value:
+            name: US Dollar
+            code: USD
+            symbol: $
+            isDefault: true
+        withoutIsActive:
+          summary: Omitted isDefault, should default to false
+          value:
+            name: US Dollar
+            code: USD
+            symbol: $

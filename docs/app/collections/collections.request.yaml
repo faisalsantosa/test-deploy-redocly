@@ -1,0 +1,47 @@
+CreateCollection:
+  description: Create a new collection
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+          -  thumbnail
+        properties: 
+          name:
+            type: string
+            example: "Smartwatch Collections"
+          thumbnail:
+            type: string
+            example: https://example.com/thumbnail.jpg
+          description:
+            type: string
+            example: Lorem ipsum dolor sit amet
+          isFeatured:
+            type: boolean
+            example: false
+            description: default value will be <b>false</b>
+UpdateCollection:
+  description: Update a collection
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        properties: 
+          name:
+            type: string
+            example: "Smartwatch Collections"
+          thumbnail:
+            type: string
+            example: https://example.com/thumbnail.jpg
+          description:
+            type: string
+            example: Lorem ipsum dolor sit amet
+          isFeatured:
+            type: boolean
+            example: false
+          order:
+            type: integer
+            example: 1

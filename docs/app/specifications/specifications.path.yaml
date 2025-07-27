@@ -1,0 +1,42 @@
+get: 
+  tags: 
+    -  Specifications
+  summary: Get All Specifications
+  operationId: getAllSpecifications
+  parameters: 
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/Page
+    - $ref: ../../shared/parameters/pagination.parameter.yaml#/PerPage
+    - $ref: specifications.parameter.yaml#/SortField
+    - $ref: specifications.parameter.yaml#/SortDirection
+    - $ref: specifications.parameter.yaml#/SearchFields
+    - $ref: specifications.parameter.yaml#/SearchKeyword
+  responses: 
+    "200":
+      $ref: specifications.response.yaml#/AllSpecifications
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+post: 
+  tags: 
+    -  Specifications
+  summary: Create Specification
+  operationId: createSpecification
+  requestBody: 
+    $ref: specifications.request.yaml#/CreateSpecification
+  responses: 
+    "200":
+      $ref: specifications.response.yaml#/OneSpecification
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+      

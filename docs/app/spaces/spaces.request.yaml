@@ -1,0 +1,37 @@
+CreateSpace:
+  description: Create a new space
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+          -  thumbnail
+        properties: 
+          name:
+            type: string
+            example: Office
+          thumbnail:
+            type: string
+            example: https://picsum.photos/id/1/5000/3333
+UpdateSpace:
+  description: Update a space
+  required: true
+  content: 
+    application/json:
+      schema: 
+        type: object
+        required: 
+          -  name
+          -  thumbnail
+        properties: 
+          name:
+            type: string
+            example: Edit space
+          thumbnail:
+            type: string
+            example: https://picsum.photos/id/1/5000/3333
+          order:
+            type: integer
+            example: 1

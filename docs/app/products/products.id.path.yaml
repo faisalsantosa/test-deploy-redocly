@@ -1,0 +1,68 @@
+get: 
+  tags: 
+    -  Products
+  summary: Get Selected Products
+  operationId: getSelectedProducts
+  parameters:
+    - $ref: products.parameter.yaml#/ProductID
+  responses: 
+    "200":
+      $ref: products.response.yaml#/OneProduct
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch: 
+  tags: 
+    -  Products
+  summary: Update Product
+  operationId: updateProduct
+  parameters: 
+    - $ref: products.parameter.yaml#/ProductID
+  requestBody: 
+    $ref: products.request.yaml#/UpdateProduct
+  responses: 
+    "200":
+      $ref: products.response.yaml#/OneProduct
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400InvalidData
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Products
+  summary: Delete Product
+  operationId: deleteProduct
+  parameters: 
+    - $ref: products.parameter.yaml#/ProductID
+  responses: 
+    "200":
+      description: Delete product
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Product deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError

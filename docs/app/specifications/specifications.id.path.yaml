@@ -1,0 +1,71 @@
+get: 
+  tags: 
+    -  Specifications
+  summary: Get Selected Specification
+  operationId: getSelectedSpecification
+  parameters:
+    - $ref: specifications.parameter.yaml#/SpecificationID
+  responses: 
+    "200":
+      $ref: specifications.response.yaml#/OneSpecification
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+patch:  
+  tags: 
+    -  Specifications
+  summary: Update Specification
+  operationId: updateSpecification
+  parameters: 
+    - $ref: specifications.parameter.yaml#/SpecificationID
+  requestBody: 
+    $ref: specifications.request.yaml#/UpdateSpecification
+  responses: 
+    "200":
+      $ref: specifications.response.yaml#/OneSpecification
+    "400":
+      $ref: ../../shared/responses/http.yaml#/400BadRequest
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+delete: 
+  tags: 
+    -  Specifications
+  summary: Delete Specification
+  operationId: deleteSpecification
+  parameters: 
+    - $ref: specifications.parameter.yaml#/SpecificationID
+  responses: 
+    "200":
+      description: Delete specification
+      content: 
+        application/json:
+          schema: 
+            type: object
+            properties: 
+              message:
+                type: string
+                example: "Specification deleted successfully"
+    "401":
+      $ref: ../../shared/responses/http.yaml#/401Unauthorized
+    "403":
+      $ref: ../../shared/responses/http.yaml#/403Forbidden
+    "404":
+      $ref: ../../shared/responses/http.yaml#/404NotFound
+    "500":
+      $ref: ../../shared/responses/http.yaml#/500InternalServerError
+    
+    
+    
+    
+      

@@ -1,0 +1,296 @@
+AllProducts:
+  description: Success
+  content: 
+    application/json:
+      schema: 
+        type: object
+        properties: 
+          message:
+            type: string
+            example: Success
+          data:
+            type: array
+            items: 
+              type: object
+              properties: 
+                id:
+                  type: integer
+                  example: 1
+                name:
+                  type: string
+                  example: "Samsung Smartwatch"
+                price:
+                  type: number
+                  example: 10000
+                isOnSale:
+                  type: boolean
+                  example: false
+                salePrice:
+                  type: number
+                  example: 5000
+                  description: show this when `isOnSale` is true
+                url:
+                  type: string
+                  example: https://example.com/smartwatch/buy-here.html
+                thumbnail:
+                  type: string
+                  example: https://example.com/thumbnail.jpg
+                pros:
+                  type: string
+                  example: "Long battery life"
+                const:
+                  type: string
+                  example: "It's too heavy"
+                description:
+                  type: string
+                  example: "Smartwatch with long battery life"
+                createdAt:
+                  type: string
+                  example: "2022-01-01T00:00:00Z"
+                updatedAt:
+                  type: string
+                  example: "2022-01-01T00:00:00Z"
+                brand:
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: Samsung
+                category:
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: "Electronics"
+                subCategory:
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: "Smartwatch"
+                currency:
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: "USD"
+                    symbol:
+                      type: string
+                      example: "$"
+                spaces:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                  example: 
+                    - id: 1
+                      name: "Kitchen"
+                    - id: 2
+                      name: "Living Room"
+                images:
+                  type: array
+                  items: 
+                    type: string
+                  example: 
+                    - https://example.com/image1.jpg
+                    - https://example.com/image2.jpg
+                specifications:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      value:
+                        type: string
+                  example: 
+                    - id: 1
+                      name: Height
+                      value: 250 g
+                    - id: 2
+                      name: Width
+                      value: 30 cm
+                colors:
+                  type: array
+                  items: 
+                    type: object
+                    properties: 
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      hex:
+                        type: string
+                  example: 
+                    - id: 1
+                      name: "Red"
+                      hex: "#FF0000"
+                    - id: 2
+                      name: "Blue"
+                      hex: "#0000FF"
+          meta:
+            $ref: ../../shared/schemas/meta.yaml
+OneProduct:
+  description: Success
+  content: 
+    application/json:
+      schema: 
+        type: object
+        properties: 
+          message:
+            type: string
+            example: Success
+          data:
+            type: object
+            properties: 
+              id:
+                type: integer
+                example: 1
+              name:
+                type: string
+                example: "Samsung Smartwatch"
+              price:
+                type: number
+                example: 10000
+              isOnSale:
+                type: boolean
+                example: false
+              salePrice:
+                type: number
+                example: 5000
+                description: show this when `isOnSale` is true
+              url:
+                type: string
+                example: https://example.com/smartwatch/buy-here.html
+              thumbnail:
+                type: string
+                example: https://example.com/thumbnail.jpg
+              pros:
+                type: string
+                example: "Long battery life"
+              const:
+                type: string
+                example: "It's too heavy"
+              description:
+                type: string
+                example: "Smartwatch with long battery life"
+              createdAt:
+                type: string
+                example: "2022-01-01T00:00:00Z"
+              updatedAt:
+                type: string
+                example: "2022-01-01T00:00:00Z"
+              brand:
+                type: object
+                properties: 
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: Samsung
+              category:
+                type: object
+                properties: 
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: "Electronics"
+              subCategory:
+                type: object
+                properties: 
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: "Smartwatch"
+              currency:
+                type: object
+                properties: 
+                  id:
+                    type: integer
+                    example: 1
+                  name:
+                    type: string
+                    example: "USD"
+                  symbol:
+                    type: string
+                    example: "$"
+              spaces:
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                example: 
+                  - id: 1
+                    name: "Kitchen"
+                  - id: 2
+                    name: "Living Room"
+              images:
+                type: array
+                items: 
+                  type: string
+                example: 
+                  - https://example.com/image1.jpg
+                  - https://example.com/image2.jpg
+              specifications:
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    value:
+                      type: string
+                example: 
+                  - id: 1
+                    name: Height
+                    value: 250 g
+                  - id: 2
+                    name: Width
+                    value: 30 cm
+              colors:
+                type: array
+                items: 
+                  type: object
+                  properties: 
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    hex:
+                      type: string
+                example: 
+                  - id: 1
+                    name: "Red"
+                    hex: "#FF0000"
+                  - id: 2
+                    name: "Blue"
+                    hex: "#0000FF"

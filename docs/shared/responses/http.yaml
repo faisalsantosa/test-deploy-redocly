@@ -1,0 +1,140 @@
+"200OKResponse":
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+            example: OK
+"400BadRequest":
+  description: Bad request
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: BAD_REQUEST
+          message:
+            type: string
+            example: Bad request
+"400InvalidAction":
+  description: Invalid action
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: INVALID_ACTION
+          message:
+            type: string
+            example: Invalid action
+          details:
+            type: null
+"400InvalidData":
+  description: Validation
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: INVALID_DATA
+          message:
+            type: string
+            example: Invalid data
+          details:
+            type: object
+            properties:
+              errors:
+                type: object
+                properties:
+                  fieldName:
+                    type: array
+                    items:
+                      example: fieldName is required
+                  anotherFieldName:
+                    type: array
+                    items:
+                      example: anotherFieldName must be an email
+"400InvalidParams":
+  description: Invalid params
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: INVALID_PARAMS
+          message:
+            type: string
+            example: Invalid params
+          details:
+            type: null
+"401Unauthorized":
+  description: Unauthorized
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: UNAUTHORIZED
+          message:
+            type: string
+            example: Unauthorized
+          details:
+            type: 'null'
+"403Forbidden":
+  description: Forbidden
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: FORBIDDEN
+          message:
+            type: string
+            example: Forbidden
+          details:
+            type: 'null'
+"404NotFound":
+  description: Record not found
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: RECORD_NOT_FOUND
+          message:
+            type: string
+            example: Record not found
+          details:
+            type: 'null'
+"500InternalServerError":
+  description: Internal server error
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          code:
+            type: string
+            example: INTERNAL_SERVER_ERROR
+          message:
+            type: string
+            example: Internal server error
+          details:
+            type: 'null'
