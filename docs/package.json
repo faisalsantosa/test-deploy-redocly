@@ -2,13 +2,15 @@
   "name": "redocly-docs",
   "version": "1.0.0",
   "scripts": {
+    "build": "npx @redocly/cli build-docs index.yaml --output dist/index.html",
     "start": "node server.js",
-    "build": "redocly build-docs docs/index.yaml -o docs/public"
+    "dev": "npm run build && npm run start"
   },
   "dependencies": {
     "express": "^4.18.2"
   },
-  "devDependencies": {
-    "@redocly/cli": "^1.0.0"
+  "devDependencies": {},
+  "engines": {
+    "node": ">=21"
   }
 }
